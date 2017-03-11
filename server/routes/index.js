@@ -1,8 +1,9 @@
 // Require your controllers here
 const Users = require("../models").Users;
 const UsersController = require("../controllers/Users");
-const LinkController = require("../controllers/link")
 const Link = require("../models").Link;
+const LinkController = require("../controllers/link")
+
 
 
 module.exports = (app) => {
