@@ -1,6 +1,6 @@
 // Require your controllers here
 const Users = require("../models").Users;
-const UsersController = require("../controllers/users");
+const UsersController = require("../controllers/Users");
 
 
 module.exports = (app) => {
