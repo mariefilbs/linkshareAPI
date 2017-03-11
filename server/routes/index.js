@@ -1,6 +1,8 @@
 // Require your controllers here
+const Users = require("../models").Users;
+const UsersController = require("../controllers/users");
 
 
 module.exports = (app) => {
-  // Add your routes here
+  app.post('/Users', UsersController.register);
 };
