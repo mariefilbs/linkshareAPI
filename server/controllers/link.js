@@ -1,5 +1,5 @@
-const User = require("../models").Users;
-const Links = require("../models").Links;
+const User = require("../models").users;
+const Links = require("../models").links;
 
 
 module.exports = {

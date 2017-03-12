@@ -1,7 +1,5 @@
 // Require your controllers here
-const Users = require("../models").Users;
-const UsersController = require("../controllers/Users");
-const Link = require("../models").Link;
+const UsersController = require("../controllers/users");
 const LinkController = require("../controllers/link")
 
 
@@ -9,6 +7,9 @@ const LinkController = require("../controllers/link")
 module.exports = (app) => {
   //Users
   app.post('/Users', UsersController.register);
+  app.get('/Users/:id', UsersController.listusers)
+  app.post('/login', UsersController.login);
+
 
   //Links
   app.post('/:userId/addLink', LinkController.create);
