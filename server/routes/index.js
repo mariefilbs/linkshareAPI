@@ -1,6 +1,7 @@
 // Require your controllers here
 const UsersController = require("../controllers/users");
-const LinkController = require("../controllers/link")
+const LinkController = require("../controllers/link");
+const CommentController = require("../controllers/comment");
 
 
 
@@ -13,4 +14,7 @@ module.exports = (app) => {
 
   //Links
   app.post('/:userId/addLink', LinkController.create);
+
+  //Comments
+  app.post('/:userId/:postId/addComment', CommentController.create);
 };

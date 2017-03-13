@@ -1,5 +1,6 @@
 const User = require("../models").users;
 const Links = require("../models").links;
+const Comment = require("../models").comment;
 
 
 module.exports = {
