@@ -46,7 +46,7 @@ const Comment = require("../models").comment;
          if (input === user.password) {
            console.log(input, 'from inside input')
            var token = jwt.encode({ id: user.id, email: user.email  }, appSecrets.jwtSecret);
-           return res.status(200).send(token);
+           return res.status(200).send({ token: token });
          } else {
            return res.status(401).send({ message: "No such email/wrong password." });
          }

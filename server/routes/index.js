@@ -14,6 +14,7 @@ module.exports = (app) => {
 
   //Links
   app.post('/:userId/addLink', LinkController.create);
+  app.get('/links', LinkController.listLinks)
 
   //Comments
   app.post('/:userId/:postId/addComment', CommentController.create);
