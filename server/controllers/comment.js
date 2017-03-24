@@ -1,6 +1,6 @@
-const Comments = require("../models").comment;
-const Users = require("../models").users;
-const Links = require("../models").links;
+const Comments = require("../models").Comment;
+const Users = require("../models").Users;
+const Links = require("../models").Links;
 
 module.exports = {
    create (req, res) {
@@ -11,5 +11,16 @@ module.exports = {
      })
        .then(comment => res.status(201).send(comment))
        .catch(error => res.status(400).send(error));
-   }
+   },
+   getOneComment (req, res) {
+      Comments.findById(req.params.id)
+        .then(comment => res.status(201).send(comment))
+        .catch(error => res.status(400).send(error));
+    },
+
+    getComments (req, res) {
+      Comments.findAll()
+        .then(comment => res.status(201).send(comment))
+        .catch(error => res.status(400).send(error));
+    }
  };

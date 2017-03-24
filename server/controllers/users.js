@@ -2,7 +2,7 @@ const Users = require("../models").Users;
 const bcrypt = require("bcryptjs");
 const jwt = require("jwt-simple");
 const appSecrets = require("../config/secrets");
-const Comment = require("../models").comment;
+const Comment = require("../models").Comment;
 
  module.exports = {
    register (req, res) {
@@ -46,6 +46,7 @@ const Comment = require("../models").comment;
          if (input === user.password) {
            console.log(input, 'from inside input')
            var token = jwt.encode({ id: user.id, email: user.email  }, appSecrets.jwtSecret);
+           //return token as a JSON object and not as a sting
            return res.status(200).send({ token: token });
          } else {
            return res.status(401).send({ message: "No such email/wrong password." });
