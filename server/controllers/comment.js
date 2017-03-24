@@ -12,8 +12,8 @@ module.exports = {
        .then(comment => res.status(201).send(comment))
        .catch(error => res.status(400).send(error));
    },
-   getOneComment (req, res) {
-      Comments.findById(req.params.id)
+   getLinkComments (req, res) {
+      Comments.findById(req.params.linkId)
         .then(comment => res.status(201).send(comment))
         .catch(error => res.status(400).send(error));
     },

@@ -18,6 +18,6 @@ module.exports = (app) => {
 
   //Comments
   app.post('/:userId/:postId/addComment', CommentController.create);
-  app.get('/comment/:id', CommentController.getOneComment);
+  app.get('/comment/:linkId', CommentController.getLinkComment);
   app.get('/comments', CommentController.getComments);
 };
